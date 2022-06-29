@@ -29,8 +29,17 @@ contract SimpleStorage{
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         People memory newPerson = People(_favoriteNumber,_name);
         people.push(newPerson);
+        //called to mapping
+        nameToFavoriteNumber[_name] = _favoriteNumber;
         
     }
+
+    // mapping data
+    mapping(string => uint256) public nameToFavoriteNumber;
+
+    // memory temporary bisa diganti
+    // calldata temporary bisa diganti
+    // storage temporary tapi tidak bisa diganti
 
     function store(uint256 _favNumber ) public{
         favoriteNumber = _favNumber;
