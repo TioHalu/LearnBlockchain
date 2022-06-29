@@ -16,6 +16,22 @@ contract SimpleStorage{
     // public type akan membuat/membaca button setleah di deploy
     uint256 public favoriteNumber;
 
+    // struct and array
+    struct People{
+        uint256 favoriteNumber;
+        string name;
+    }
+
+    People public person = People({favoriteNumber:2, name:"agustio"});
+    
+    People[] public people;
+
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+        People memory newPerson = People(_favoriteNumber,_name);
+        people.push(newPerson);
+        
+    }
+
     function store(uint256 _favNumber ) public{
         favoriteNumber = _favNumber;
     }
