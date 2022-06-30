@@ -41,7 +41,8 @@ contract SimpleStorage{
     // calldata temporary bisa diganti
     // storage temporary tapi tidak bisa diganti
 
-    function store(uint256 _favNumber ) public{
+// penambahan virtual untuk method override
+    function store(uint256 _favNumber ) public virtual{
         favoriteNumber = _favNumber;
     }
 
